@@ -1,0 +1,47 @@
+.features {
+    background: #2a3a4c;
+  }
+.features .columns {
+    height: 220px;
+  }
+
+.btn-social{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    text-align: center;
+  
+}
+.btn-facebook{
+    border-color: rgba(0,0,0,0.2);
+    color: #fff;
+    background:#3b5998 ;
+    
+}
+.btn-google{
+    border-color: rgba(0,0,0,0.2);
+    color: #fff;
+    background: #dd4b39;
+}
+.circle {
+    width: 10rem;
+    height: 10rem;
+    text-align: center;
+    border-radius: 100%;
+    vertical-align: middle;
+    display: table-cell;
+  }
+  .column {
+    text-align: center;
+  }
+  .circular--square {
+    border-radius: 50%;
+    text-align: center;
+  }
+  .textT{
+      color: white;
+      font-size: x-large;
+
+      font-family:unset;
+  }

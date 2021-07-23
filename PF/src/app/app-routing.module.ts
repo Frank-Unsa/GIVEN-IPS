@@ -33,6 +33,11 @@ const routes: Routes = [
         path: 'graficos',
         loadChildren: () => import('./graficos/graficos.module').then(m => m.GraficosModule)
       },
+      {
+        path: 'login',
+        loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+      },
+
       /* Crear ruta para preguntas frecuentes */
     ]
   },

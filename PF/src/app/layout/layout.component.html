@@ -14,7 +14,7 @@
   	</div>
 
   	<div id="navbarBasicExample" class="navbar-menu">
-    	
+    	LOGGED: {{isLogged}}
     	<div class="navbar-end">
 
             <!-- <a routerLink="/inicio" class="navbar-item">
@@ -33,9 +33,9 @@
         		Ubicalos
       		</a>
 
-      		<a routerLink="/foro" class="navbar-item">
-        		Foro
-      		</a>
+      		<li class="navbar-item" *ngIf="isLogged">
+				<a routerLink="/foro" class="navbar-item">Foro</a>
+			</li>
 			
             <!-- Crear routerLink para Preguntas Frecuentes -->
 			<!-- <a class="navbar-item">
@@ -79,13 +79,31 @@
         		</div>
       		</div>
 
-      		<div class="navbar-item">
-        		<div class="buttons">
-          			<a class="button is-primary">
-            			<strong>Registrarse</strong>
-         			</a>
-        		</div>
-      		</div>
+      		<div class="navbar-item " *ngIf="!isLogged">
+				<div class="buttons">
+					<a routerLink='/login' class="button is-primary">
+						<strong>Login</strong>
+					</a>
+				</div>
+			</div>
+
+			<li class="navbar-item" *ngIf="isLogged">
+				<figure class="image is-32x32">
+					<img class="is-rounded" src="{{user.photoUrl}}" alt="profile">
+				</figure>
+				<!--<img src="{{user.photoUrl}}" class="image is-32x32"  alt="profile" >-->
+				<div class=" m-1">
+					<div class="TextUser" *ngIf="providerId != 'password'">{{user.name}}</div>
+					<div class="Textemail" >{{user.email}}</div>
+				</div>
+			</li>
+			<div class="navbar-item " *ngIf="isLogged">
+				<div class="buttons">
+					<a href="" (click)="onLogout()" class="button is-primary">
+						<strong>Salir</strong>
+					</a>
+				</div>
+			</div>
     	</div>
   	</div>
 </nav>
